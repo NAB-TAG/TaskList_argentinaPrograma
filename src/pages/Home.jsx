@@ -1,6 +1,14 @@
+import Header from "../components/Header/Header";
+import NavbarHeader from "../components/Header/NavbarHeader";
+import NavbarLinkHeader from "../components/Header/NavbarLinkHeader";
+
 const Home = () => {
     return(
-        <h1>Probar su codigo dentro de pages/Home.jsx</h1>
+        <Header>
+            <NavbarHeader>
+                <NavbarLinkHeader name="Inicio" href="#"/>
+            </NavbarHeader>
+        </Header>
     );
 }
 

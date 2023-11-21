@@ -1,0 +1,22 @@
+.navbar{
+    background-color: #FFF;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+    align-items: center;
+}
+
+.navbar__list{
+    display: flex;
+    list-style: none;
+    color: #070a57;
+}
+.navbar__logo{
+    text-decoration: none;
+    font-family: sans-serif;
+}
+.navbar__list--item a{
+    text-decoration: none;
+    color: #070a57;
+    font-family: sans-serif;
+}
