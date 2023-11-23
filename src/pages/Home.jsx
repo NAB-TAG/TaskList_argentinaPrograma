@@ -1,6 +1,13 @@
+import { Table } from "./table";
 const Home = () => {
-    return(
-        <h1>Probar su codigo dentro de pages/Home.jsx</h1>
+    return (
+        <>
+            <div className="w-full h-screen flex justify-center">
+                <div className="w-full p-2">
+                    <Table />
+                </div>
+            </div>
+        </>
     );
 }
 
