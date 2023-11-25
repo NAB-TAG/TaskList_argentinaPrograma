@@ -52,7 +52,7 @@ export const Table = () => {
           )}
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-transparent">
             {idArray.length > 0 && (
-              <p className="mt-1 animate-ping" style={{ userSelect: 'none' }}>
+              <p className="mt-1" style={{ userSelect: 'none' }}>
                 {idArray.length}
               </p>
             )}
