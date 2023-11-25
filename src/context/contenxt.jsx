@@ -13,16 +13,16 @@ export const NewContext = () => {
 }
 
 export const ContextProvider = ({ children }) => {
-    const [eliminar,setEliminar] = useState(false);
-    const [rowSelectedEliminar,setRowSelectedEliminar] = useState(false);
+    const [Delete,setDelete] = useState(false);
+    const [rowSelectedDelete,setRowSelectedDelete] = useState(false);
     const [id,setId] = useState([]);
     
     return (
         <Context.Provider value={{
-            eliminar,
-            setEliminar,
-            rowSelectedEliminar,
-            setRowSelectedEliminar,
+            Delete,
+            setDelete,
+            rowSelectedDelete,
+            setRowSelectedDelete,
             id,
             setId  
         }}>
