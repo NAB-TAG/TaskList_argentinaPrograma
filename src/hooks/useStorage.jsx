@@ -6,7 +6,7 @@ function useStorage( key, initialValue )
     const storedValue = localStorage.getItem( key );
     // Si no existe un valor en el localStorage poner el valor inical
     const initial = storedValue ? JSON.parse(storedValue) : initialValue;
-
+    
     const [ value, setValue ] = useState(initial);
 
     // Funcion para actualizar el estado en el LocalStorage

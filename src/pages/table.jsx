@@ -1,30 +1,54 @@
-import { Row } from "../components/row";
+import { Row } from "../components/Table/Row";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { RiDeleteBin7Line } from "react-icons/ri";
 import { NewContext } from "../context/contenxt";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import useStorage from "../hooks/useStorage";
+import AlertInput from "../helpers/Alert";
 
 export const Table = () => {
   const { Delete, setDelete, setId, id: idArray } = NewContext();
+  const [ activateDeleting, setActivateDeleting ] = useState(false);
+  const [ storage, setStorage ] = useStorage('tasklist', localStorage.getItem('tasklist')?localStorage.getItem('tasklist'):[])
+  
+
 
   const DeleteClick = () => {
     setDelete(!Delete);
+    setActivateDeleting(!activateDeleting)
+    if (activateDeleting) {
+      console.log(idArray)
+      // setStorage(storage.push())
+      alert("se han borrado todas las listas seleccionadas")
+    }
     setId([]);
   };
 
   const DeleteFilaClick = (id) => {
-    if (Delete) {
-      // Verificar si el id ya está presente en el array
-      if (idArray.includes(id)) {
-        setId((prevIds) => prevIds.filter((prevId) => prevId !== id));
+    if (activateDeleting) {
+      const divDelete = document.getElementById(id);
+      divDelete.classList.add("active");
+      
+      if (Delete) {
+        // Verificar si el id ya está presente en el array
+        if (idArray.includes(id)) {
+          divDelete.classList.remove("active");
+          setId((prevIds) => prevIds.filter((prevId) => prevId !== id));
+        } else {
+          setId((prevIds) => [...prevIds, id]);
+        }
       } else {
-        setId((prevIds) => [...prevIds, id]);
+        return;
       }
-    } else {
-      return;
     }
   };
 
+  const handleClick = async () => {
+    const alert = await AlertInput();
+    console.log(alert)
+    // setStorage(alert)
+    
+  }
   const fakeData = [
     { id: 1, text: "Date 1" },
     { id: 2, text: "Date 2" },
@@ -32,8 +56,11 @@ export const Table = () => {
   ];
 
   useEffect(() => {
-  }, [Delete, idArray]);
+  }, [Delete, idArray, storage]);
 
+// useEffect(() => {
+//   alert('sess')
+// },[storage])
   return (
     <>
       <div className="flex justify-between w-full h-auto items-center mb-4 mt-2">
@@ -59,9 +86,10 @@ export const Table = () => {
           </div>
         </div>
       </div>
+        <button className="btn btn-success" onClick={() => handleClick()}><i className="fas fa-plus me-2"></i>Agregar Tarea</button>
       <div className="w-full h-auto flex-col justify-center items-center">
         <div className="w-full h-auto flex-col justify-center items-center">
-          {fakeData.map((item) => (
+          {storage.map((item) => (
             <div
               key={item.id}
               onClick={() => DeleteFilaClick(item.id)}

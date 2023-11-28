@@ -7,8 +7,8 @@ footer .container{
     flex-direction: column;
 }
 .footer__header{
-    position: relative;
-    width: 80%;
+    position: relative !important;
+    width: 80% !important;
     align-items: center;
     justify-content: space-between;
     display: flex;

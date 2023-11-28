@@ -23,13 +23,13 @@ const Footer = ({title, children}) => {
                     <div className="footer__header--left-label"><div></div></div>
                 </div>
                     <hr />
-                <div className="footer__links w-100 container">
+                <div className="footer__links w-75 mt-4 container">
                     <div className="row">
 
                         {children}
                         
                         <ul className="col-md-3">
-                            <h5>Registra tu email para recibir novedades y cupones gratis</h5>
+                            <h5 className='mb-2'>Registra tu email para recibir novedades y cupones gratis</h5>
                             <form action="">
                                 <input type="email" placeholder='Ingresa tu emal'/>
                                 <input type="submit" />
