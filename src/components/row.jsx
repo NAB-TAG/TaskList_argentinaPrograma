@@ -13,10 +13,10 @@ export const Row = ({ rowId, rowData }) => {
 
   return (
     <>
-      <div className="w-full h-10 flex py-5 mb-1 border-b-2 relative">
+      <div className="w-full h-10 flex py-5 mb-1 border-b-2 relative overflow-hidden">
         <div className="hover:bg-gray-50 flex items-center relative">
           {!rowIdNotFound && (
-            <div className={`border-t-2 border-black absolute left-0 right-0 h-px top-1/2 transition-opacity ${Delete && !rowIdNotFound ? "opacity-100" : "opacity-0"}`} />
+            <div className={`absolute left-0 right-0 h-px top-1/2 transition-opacity ${Delete && !rowIdNotFound ? "opacity-100" : "opacity-0"}`} />
           )}
           {Delete ? (
             <div className="crux"></div>) : (

@@ -9,14 +9,19 @@ export const Table = () => {
   const { Delete, setDelete, setId, id: idArray, Task, setTasks } = NewContext();
   const [modalOpen, setModalOpen] = useState(false);
 
+  const [ activateDeleting, setActivateDeleting ] = useState(false);
+  
+  
+
+
   const openModal = () => {
     setModalOpen(true);
   };
-
+  
   const closeModal = () => {
     setModalOpen(false);
   };
-
+  
   function eliminarTareasPorId(idArray) {
     const tasksArray = JSON.parse(localStorage.getItem('tasks')) || [];
     const nuevoArrayTasks = tasksArray.filter(task => !idArray.includes(task.id));
@@ -24,6 +29,16 @@ export const Table = () => {
     setTasks(nuevoArrayTasks);
     return nuevoArrayTasks;
   }
+  // const DeleteClick = () => {
+  //   setDelete(!Delete);
+  //   setActivateDeleting(!activateDeleting)
+  //   if (activateDeleting) {
+  //     console.log(idArray)
+  //     // setStorage(storage.push())
+  //     alert("se han borrado todas las listas seleccionadas")
+  //   }
+  //   setId([]);
+  // };
   
   const DeleteClick = () => {
     if (Delete && idArray.length > 0) {
@@ -31,6 +46,8 @@ export const Table = () => {
       setId([]); // Limpiar idArray después de eliminar tareas
     }
     setDelete(!Delete);
+    setActivateDeleting(!activateDeleting)
+
   };
 
   // const DeleteFilaClick = (id) => {
@@ -44,6 +61,7 @@ export const Table = () => {
   // };
   const DeleteFilaClick = (id) => {
     if (activateDeleting) {
+      
       const divDelete = document.getElementById(id);
       divDelete.classList.add("active");
       
@@ -124,6 +142,7 @@ export const Table = () => {
               key={item.id}
               onClick={() => DeleteFilaClick(item.id)}
               className="w-full h-auto"
+              id={item.id}
             >
               <Row rowId={item.id} rowData={item} />
             </div>
