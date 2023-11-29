@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { createContext, useContext, useState } from "react";
 
 const Context = createContext();
@@ -12,11 +11,13 @@ export const NewContext = () => {
     }
 }
 
+// eslint-disable-next-line react/prop-types
 export const ContextProvider = ({ children }) => {
     const [Delete,setDelete] = useState(false);
     const [rowSelectedDelete,setRowSelectedDelete] = useState(false);
     const [id,setId] = useState([]);
-    
+    const [Task, setTasks] = useState([]);
+
     return (
         <Context.Provider value={{
             Delete,
@@ -24,7 +25,9 @@ export const ContextProvider = ({ children }) => {
             rowSelectedDelete,
             setRowSelectedDelete,
             id,
-            setId  
+            setId,
+            Task,
+            setTasks
         }}>
             {children}
         </Context.Provider>

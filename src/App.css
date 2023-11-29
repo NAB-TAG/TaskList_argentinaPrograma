@@ -28,18 +28,31 @@ body{
   position: absolute;
   transform:  rotate(135deg);
 }
+
 .active .crux::after{
   transform: rotate(180deg);
   animation: moveRight 1s forwards;
 }
+.active .crux{
+  position: absolute;
+  animation: estirate 1s .5s forwards;
+  /* width: 100vw; */
+}
+.active .crux::after{
+  transform: rotate(180deg);
+  animation: moveRight 1s forwards;
+  
+  /* width: 5000px; */
+
+}
 .active .crux::before{
   content: '';
   width: 100%;
+  max-width: 20px;
   height: 3px;
   background-color: black;
-  animation: moveBottom .5s both;
+  animation: rotate 1s forwards,moveBottom 1s .5s both;
   position: absolute;
-  transform: rotate(90deg);
 }
 @keyframes moveBottom {
 
@@ -51,6 +64,17 @@ body{
 @keyframes moveRight {
 
   100% {
-    width: 200px;
+    width: 100%;
   }
 }
+@keyframes rotate {
+  100% {
+    transform: rotate(90deg);
+  }
+}
+@keyframes estirate {
+  100% {
+    width: 100vw;;
+  }
+}
+

@@ -8,8 +8,15 @@ function App() {
 
   return (
     <>
-      
-      <Home />
+
+      <div className='w-full'>
+        <div className='bg-white lg:w-1/2 mx-auto border-2 rounded-2xl p-5 shadow-lg'>
+          <Home />
+        </div>
+
+      </div>
+
+
     </>
   )
 }
