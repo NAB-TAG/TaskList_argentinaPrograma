@@ -1,12 +1,4 @@
-
-import FooterColumn from "../components/Footer/Columns/FooterColumn";
-import { Table } from "./table";
-import FooterColumnLink from "../components/Footer/Columns/FooterColumnLink";
-import Footer from "../components/Footer/Footer";
-
-// import Header from "../components/Header/Header";
-// import NavbarHeader from "../components/Header/NavbarHeader";
-// import NavbarLinkHeader from "../components/Header/NavbarLinkHeader";
+import { Table } from "./taskList";
 
 const Home = () => {
     return(

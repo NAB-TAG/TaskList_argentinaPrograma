@@ -1,10 +1,10 @@
-import { Row } from "../components/row";
+import { Row } from "../components/taskItem";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { RiDeleteBin7Line } from "react-icons/ri";
 import { NewContext } from "../context/contenxt";
 import { useEffect, useState } from "react";
 import { RiAddLine } from 'react-icons/ri';
-import { ModalTask } from "../components/Modal";
+import { ModalTask } from "../components/taskForm";
 export const Table = () => {
   const { Delete, setDelete, setId, id: idArray, Task, setTasks } = NewContext();
   const [modalOpen, setModalOpen] = useState(false);
@@ -29,16 +29,6 @@ export const Table = () => {
     setTasks(nuevoArrayTasks);
     return nuevoArrayTasks;
   }
-  // const DeleteClick = () => {
-  //   setDelete(!Delete);
-  //   setActivateDeleting(!activateDeleting)
-  //   if (activateDeleting) {
-  //     console.log(idArray)
-  //     // setStorage(storage.push())
-  //     alert("se han borrado todas las listas seleccionadas")
-  //   }
-  //   setId([]);
-  // };
   
   const DeleteClick = () => {
     if (Delete && idArray.length > 0) {
@@ -50,15 +40,7 @@ export const Table = () => {
 
   };
 
-  // const DeleteFilaClick = (id) => {
-  //   if (Delete) {
-  //     if (idArray.includes(id)) {
-  //       setId((prevIds) => prevIds.filter((prevId) => prevId !== id));
-  //     } else {
-  //       setId((prevIds) => [...prevIds, id]);
-  //     }
-  //   }
-  // };
+
   const DeleteFilaClick = (id) => {
     if (activateDeleting) {
       

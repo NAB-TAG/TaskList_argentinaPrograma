@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import { FaRegCircle } from "react-icons/fa";
 import { NewContext } from "../context/contenxt";
-import { IoCloseSharp } from "react-icons/io5";
 import { useEffect } from "react";
 
 // eslint-disable-next-line no-unused-vars
@@ -24,7 +23,7 @@ export const Row = ({ rowId, rowData }) => {
 
             <div className="crux"></div>) : (
 
-            <FaRegCircle className="mx-2 text-xl text-blue-700" />
+            <FaRegCircle className="mx-2 text-xl text-blue-900" />
           )}
           <span className={`py-2 text-lg font-sans ${!rowIdNotFound ? "text-gray-500" : ""}`}>
             <p style={{ userSelect: 'none' }}>{rowData.title}</p>

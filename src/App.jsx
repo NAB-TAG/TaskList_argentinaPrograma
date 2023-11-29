@@ -12,39 +12,43 @@ import NavbarHeader from './components/Header/NavbarHeader'
 import NavbarLinkHeader from './components/Header/NavbarLinkHeader'
 
 function App() {
-
   return (
     <>
-      <Header>
+    <div className='w-full h-10 fixed z-10'>
+    <Header>
         <NavbarHeader>
-          <NavbarLinkHeader href='#' name='Inicio'/>
+          <NavbarLinkHeader href='#' />
         </NavbarHeader>
       </Header>
-      <div className='w-full'>
+    </div>
+    <div className='w-full h-10'>
+    </div>
+      
+      <div className='w-full mt-5'>
         <div className='bg-white lg:w-1/2 mx-auto border-2 rounded-2xl p-5 shadow-lg'>
           <Home />
         </div>
 
       </div>
 
-      <Footer title="Logo">
-            <FooterColumn title="Secciones">
-                <FooterColumnLink text="Inicio"/>
-            </FooterColumn>
-            <FooterColumn title="Politicas">
-                <FooterColumnLink text="Historial de pedidos"/>
-                <FooterColumnLink text="Política de Devoluciones"/>
-                <FooterColumnLink text="Política de Privacidad"/>
-                <FooterColumnLink text="Términos y Condiciones"/>
-            </FooterColumn>
-            <FooterColumn title="Ayuda">
-                <FooterColumnLink text="Preguntas Frecuentes"/>
-                <FooterColumnLink text="Contáctenos"/>
-                <FooterColumnLink text="Acerca de Nosotros"/>
-                <FooterColumnLink text="Blog"/>
-                <FooterColumnLink text="Redes Sociales"/>
-            </FooterColumn>
-        </Footer>
+      <Footer>
+        <FooterColumn title="Secciones">
+          <FooterColumnLink text="Inicio" />
+        </FooterColumn>
+        <FooterColumn title="Politicas">
+          <FooterColumnLink text="Historial de pedidos" />
+          <FooterColumnLink text="Política de Devoluciones" />
+          <FooterColumnLink text="Política de Privacidad" />
+          <FooterColumnLink text="Términos y Condiciones" />
+        </FooterColumn>
+        <FooterColumn title="Ayuda">
+          <FooterColumnLink text="Preguntas Frecuentes" />
+          <FooterColumnLink text="Contáctenos" />
+          <FooterColumnLink text="Acerca de Nosotros" />
+          <FooterColumnLink text="Blog" />
+          <FooterColumnLink text="Redes Sociales" />
+        </FooterColumn>
+      </Footer>
     </>
   )
 }

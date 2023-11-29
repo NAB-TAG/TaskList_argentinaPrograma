@@ -1,21 +1,24 @@
-.navbar{
-    background-color: #FFF;
+.navbar {
+    background-color: rgba(255, 255, 255, 0.5);
     display: flex;
     justify-content: space-between;
     padding: 10px 30px;
     align-items: center;
+    backdrop-filter: blur(10px); 
 }
 
-.navbar__list{
+.navbar__list {
     display: flex;
     list-style: none;
     color: #070a57;
 }
-.navbar__logo{
+
+.navbar__logo {
     text-decoration: none;
     font-family: sans-serif;
 }
-.navbar__list--item a{
+
+.navbar__list--item a {
     text-decoration: none;
     color: #070a57;
     font-family: sans-serif;
