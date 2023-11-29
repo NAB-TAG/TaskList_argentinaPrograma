@@ -24,9 +24,13 @@ Este proyecto es el resultado de nuestro trabajo final para el programa #argenti
 
    ```bash
    npm run dev
+
 //Entras al repositorio
+
 cd TaskList_argentinaPrograma
+
 // Despues lo ejecutas
+
 npm run dev
 
 
