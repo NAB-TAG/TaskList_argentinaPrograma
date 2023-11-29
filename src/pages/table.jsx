@@ -1,4 +1,4 @@
-import { Row } from "../components/Table/Row";
+import { Row } from "../components/row";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { RiDeleteBin7Line } from "react-icons/ri";
 import { NewContext } from "../context/contenxt";
@@ -8,7 +8,6 @@ import { ModalTask } from "../components/Modal";
 export const Table = () => {
   const { Delete, setDelete, setId, id: idArray, Task, setTasks } = NewContext();
   const [modalOpen, setModalOpen] = useState(false);
-
 
   const [ activateDeleting, setActivateDeleting ] = useState(false);
   
@@ -49,13 +48,6 @@ export const Table = () => {
     setDelete(!Delete);
     setActivateDeleting(!activateDeleting)
 
-    if (activateDeleting) {
-      console.log(idArray)
-      // setStorage(storage.push())
-      alert("se han borrado todas las listas seleccionadas")
-    }
-    setId([]);
-
   };
 
   // const DeleteFilaClick = (id) => {
@@ -69,6 +61,7 @@ export const Table = () => {
   // };
   const DeleteFilaClick = (id) => {
     if (activateDeleting) {
+      
       const divDelete = document.getElementById(id);
       divDelete.classList.add("active");
       
@@ -86,7 +79,6 @@ export const Table = () => {
     }
   };
 
-
   function createStorageTasks() {
     if (localStorage.getItem('tasks') === null) {
       const newStorageTask = [];
@@ -102,11 +94,11 @@ export const Table = () => {
   useEffect(() => {
   }, [Delete, idArray]);
 
-
   useEffect(() => {
     const tasksArray = createStorageTasks();
     setTasks(tasksArray);
   }, [setTasks]);
+
 
   return (
     <>
@@ -136,7 +128,6 @@ export const Table = () => {
           </div>
         </div>
       </div>
-
       <button
         onClick={openModal}
         className="h-10 w-36  bg-green-500 hover:bg-green-600 text-white font-bold rounded flex justify-start p-4 items-center transform transition-transform duration-300 ease-in-out hover:scale-110"
@@ -147,12 +138,12 @@ export const Table = () => {
       <div className="w-full h-auto flex-col justify-center items-center">
         <div className="w-full h-auto flex-col justify-center items-center">
           {Task.map((item) => (
-
             <div
               key={item.id}
               onClick={() => DeleteFilaClick(item.id)}
               className="w-full h-auto"
-              id={item.id}>
+              id={item.id}
+            >
               <Row rowId={item.id} rowData={item} />
             </div>
           ))}
