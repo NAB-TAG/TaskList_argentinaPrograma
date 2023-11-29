@@ -33,12 +33,30 @@ export const Table = () => {
     setDelete(!Delete);
   };
 
+  // const DeleteFilaClick = (id) => {
+  //   if (Delete) {
+  //     if (idArray.includes(id)) {
+  //       setId((prevIds) => prevIds.filter((prevId) => prevId !== id));
+  //     } else {
+  //       setId((prevIds) => [...prevIds, id]);
+  //     }
+  //   }
+  // };
   const DeleteFilaClick = (id) => {
-    if (Delete) {
-      if (idArray.includes(id)) {
-        setId((prevIds) => prevIds.filter((prevId) => prevId !== id));
+    if (activateDeleting) {
+      const divDelete = document.getElementById(id);
+      divDelete.classList.add("active");
+      
+      if (Delete) {
+        // Verificar si el id ya está presente en el array
+        if (idArray.includes(id)) {
+          divDelete.classList.remove("active");
+          setId((prevIds) => prevIds.filter((prevId) => prevId !== id));
+        } else {
+          setId((prevIds) => [...prevIds, id]);
+        }
       } else {
-        setId((prevIds) => [...prevIds, id]);
+        return;
       }
     }
   };
