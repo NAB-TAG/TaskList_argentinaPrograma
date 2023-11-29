@@ -19,7 +19,7 @@ export const Row = ({ rowId, rowData }) => {
             <div className={`border-t-2 border-black absolute left-0 right-0 h-px top-1/2 transition-opacity ${Delete && !rowIdNotFound ? "opacity-100" : "opacity-0"}`} />
           )}
           {Delete ? (
-            <IoCloseSharp className={`mx-2 text-xl ${!rowIdNotFound && "hidden"}`} />) : (
+            <div className="crux"></div>) : (
             <FaRegCircle className="mx-2 text-xl text-blue-700" />
           )}
           <span className={`py-2 text-lg font-sans ${!rowIdNotFound ? "text-gray-500" : ""}`}>
